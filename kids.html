@@ -1,0 +1,569 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NikeShoes/Kids</title>
+  <!-- Bootstrap-5 link and script -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+    integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+    crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <!-- font-awesome link -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <link rel="stylesheet" href="CSS/gender.css">
+  <script src="JS/gender.js"></script>
+</head>
+
+<body>
+  <header>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-md ">
+      <div class="container-fluid">
+        <!-- Brand-Logo -->
+        <a class="navbar-brand" href="/">
+          <img src="image/nike_logo1.png" alt="Logo" style="width:60px;" class="rounded-pill">
+        </a>
+        <!-- Sidebar Toggler -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+          aria-controls="offcanvasNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- Sidebar -->
+        <div class="sidebar offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar"
+          aria-labelledby="offcanvasNavbarLabel">
+          <!-- Sidebar header -->
+          <div class="offcanvas-header border-bottom">
+            <h5 class="offcanvas-title p-1" id="offcanvasNavbarLabel"><img src="image/nike_logo1.png" alt="Logo"
+                style="width:60px;" class="rounded-pill">Nike</h5>
+            <button type="button" class="btn btn-close text-reset" data-bs-dismiss="offcanvas"
+              aria-label="Close"></button>
+          </div>
+          <!-- Sidebar Body -->
+          <div class="offcanvas-body d-flex flex-column flex-md-row p-4 p-lg-0">
+            <ul class="navbar-nav justify-content-center align-items-center fs-5 flex-grow-1 pe-3 mb-lg-0 ">
+              <li class="nav-item mx-2">
+                <a class="nav-link" href="index.html
+                      ">Home</a>
+              </li>
+              <li class="nav-item mx-2">
+                <a class="nav-link" href="men.html
+                      ">Men</a>
+              </li>
+              <li class="nav-item mx-2">
+                <a class="nav-link" href="women.html
+                      ">Women</a>
+              </li>
+              <li class="nav-item mx-2">
+                <a class="nav-link" href="kids.html">Kids</a>
+              </li>
+            </ul>
+            <!-- Login/SignUp -->
+            <div class="loginbox d-flex flex-column flex-sm-row justify-content-center align-items-center gap-3">
+              <a href="login.html">Login</a>
+              <a href="signUp.html" class="text-white text-decoration-none px-3 py-1 rounded-4"
+                style="background-color: #481620;">Sign Up</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <!-- navbar ends -->
+
+  <!-- Main starts -->
+  <br />
+  <br />
+  <nav class="navbar navbar-expand-sm bg-light navbar-light" style="position: sticky;">
+    <div class="container-fluid">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" href="#" id="nav">
+            Shoes(100)</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav justify-content-end">
+        <li class="nav-item justify-content-end">
+          <a class="nav-link" onclick="hidefilter('main')" href="#" id="nav">
+            Show Filters<i class="fas fa-filter"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <br>
+
+  <div class="container-fluid">
+    <div class="row justify-content-center">
+
+      <div class="col-md-3" id="main" style="background-color: rgb(248, 249, 250);">
+        <p id="fil">
+          Lifestyle <br>
+          Jordan <br>
+          Running <br>
+          Basketball <br>
+          Training & Gym <br>
+          Football <br>
+          Golf <br>
+          Boots <br>
+          Tennis <br>
+          Athletics <br>
+          Sandals <br>
+          Slides & Flip Flops <br>
+        </p>
+        <!-- <p onclick="hidefilter('gender')" id="fil" style="display: flex;">
+                    Gender  <i class="fas fa-angle-down"></i>
+                  </p> -->
+        <p onclick="hidearrow('gender','arrow1')" id="fil1">
+          Gender
+          <i class="fas fa-angle-up" id="arrow1"></i>
+        </p>
+        <div class="container-fluid" id="gender">
+          <input type="checkbox" name="Men" value="Men" id="fil" checked /> Men <br>
+          <input type="checkbox" name="Women" value="Women" id="fil" /> Women
+        </div>
+        <p onclick="hidearrow('kids','arrow2')" id="fil1">
+          Kids
+          <i class="fas fa-angle-up" id="arrow2"></i>
+        </p>
+        <div class="container-fluid" id="kids">
+          <input type="checkbox" name="Men" value="Men" id="fil" /> Boys <br>
+          <input type="checkbox" name="Women" value="Women" id="fil" /> Girls
+        </div>
+        <p onclick="hidearrow('shop','arrow3')" id="fil1">
+          Shop By Price
+          <i class="fas fa-angle-up" id="arrow3"></i>
+        </p>
+        <div class="container-fluid" id="shop">
+          <input type="checkbox" name="Men" value="Men" id="fil" /> Under ₹ 2 500.00<br>
+          <input type="checkbox" name="Women" value="Women" id="fil" /> ₹ 2 501.00 - ₹ 7 500.00 <br>
+          <input type="checkbox" name="Women" value="Women" id="fil" /> ₹ 7 501.00 - ₹ 12 999.00 <br>
+          <input type="checkbox" name="Men" value="Men" id="fil" /> Over ₹ 13 000.00
+        </div>
+      </div>
+      <div class="col-md-9 ">
+        <div class="container">
+          <div class="row">
+            <!-- Shoes 1 -->
+            <div class="col-md-4 div1" id="div1" onmouseover="changetext('text1',0)" onmouseout="changetext('text1',1)">
+              <div class="card">
+                <img src="image/k1_1.png" id="outimage1" class="card-img-top outimage" alt="Product Image">
+                <div class="card-body">
+                  <h5 class="card-title" style="color: rgb(220, 85, 2);">Bestseller</h5>
+                  <div id="text1" class="content">
+                    <img src="image/k1_1.png" class="innerimage" onclick="ChangeImg('image/k1_1.png','outimage1')"
+                      onmouseover="ChangeImg('image/k1_1.png','outimage1')">
+                    <img src="image/k1_2.png" class="innerimage" onclick="ChangeImg('image/k1_2.png','outimage1')"
+                      onmouseover="ChangeImg('image/k1_2.png','outimage1')">
+                    <img src="image/k1_3.png" class="innerimage" onclick="ChangeImg('image/k1_3.png','outimage1')"
+                      onmouseover="ChangeImg('image/k1_3.png','outimage1')">
+                    <img src="image/k1_4.png" class="innerimage" onclick="ChangeImg('image/k1_4.png','outimage1')"
+                      onmouseover="ChangeImg('image/k1_4.png','outimage1')">
+                  </div>
+                  <br>
+                  <p class="card-text">Nike Dynamo 2 EasyOn<br> Baby/Toddler Shoes<br> 4 Colours</p>
+                  <h6 class="card-subtitle mb-2 text-muted">MRP: ₹ 4,077.00</h6>
+                </div>
+              </div>
+            </div>
+            <!-- Shoes 2 -->
+            <div class="col-md-4 div1" id="div2" onmouseover="changetext('text2',0)" onmouseout="changetext('text2',1)">
+              <div class="card">
+                <img src="image/k2_1.png" id="outimage2" class="card-img-top outimage" alt="Product Image">
+                <div class="card-body">
+                  <h5 class="card-title" style="color: rgb(220, 85, 2);">Sustainable Materials</h5>
+                  <div id="text2" class="content">
+                    <img src="image/k2_1.png" class="innerimage" onclick="ChangeImg('image/k2_1.png','outimage2')"
+                      onmouseover="ChangeImg('image/k2_1.png','outimage2')">
+                    <img src="image/k2_2.png" class="innerimage" onclick="ChangeImg('image/k2_2.png','outimage2')"
+                      onmouseover="ChangeImg('image/k2_2.png','outimage2')">
+                    <img src="image/k2_3.png" class="innerimage" onclick="ChangeImg('image/k2_3.png','outimage2')"
+                      onmouseover="ChangeImg('image/k2_3.png','outimage2')">
+                    <img src="image/k2_4.png" class="innerimage" onclick="ChangeImg('image/k2_4.png','outimage2')"
+                      onmouseover="ChangeImg('image/k2_4.png','outimage2')">
+                  </div>
+                  <br>
+                  <p class="card-text">Nike Air Max SYSTM<br> Baby/Toddler Shoes<br> 4 Colours</p>
+                  <h6 class="card-subtitle mb-2 text-muted">MRP: ₹ 4,495.00</h6>
+                </div>
+              </div>
+            </div>
+            <!-- Shoes 3 -->
+            <div class="col-md-4 div1" id="div3" onmouseover="changetext('text3',0)" onmouseout="changetext('text3',1)">
+              <div class="card">
+                <img src="image/k3_1.png" id="outimage3" class="card-img-top outimage" alt="Product Image">
+                <div class="card-body">
+                  <h5 class="card-title" style="color: rgb(220, 85, 2);">Just In</h5>
+                  <div id="text3" class="content">
+                    <img src="image/k3_1.png" class="innerimage" onclick="ChangeImg('image/k3_1.png','outimage3')"
+                      onmouseover="ChangeImg('image/k3_1.png','outimage3')">
+                    <img src="image/k3_2.png" class="innerimage" onclick="ChangeImg('image/k3_2.png','outimage3')"
+                      onmouseover="ChangeImg('image/k3_2.png','outimage3')">
+                  </div>
+                  <br>
+                  <p class="card-text">Nike Flex Runner 3<br> Baby/Toddler Shoes<br> 2 Colours</p>
+                  <h6 class="card-subtitle mb-2 text-muted">MRP: ₹ 2,995.00</h6>
+                </div>
+              </div>
+            </div>
+            <!-- Shoes 4 -->
+            <div class="col-md-4 div1" id="div4" onmouseover="changetext('text4',0)" onmouseout="changetext('text4',1)">
+              <div class="card">
+                <img src="image/k4_1.png" id="outimage4" class="card-img-top outimage" alt="Product Image">
+                <div class="card-body">
+                  <h5 class="card-title" style="color: rgb(220, 85, 2);">Just In</h5>
+                  <div id="text4" class="content">
+                    <img src="image/k4_1.png" class="innerimage" onclick="ChangeImg('image/k4_1.png','outimage4')"
+                      onmouseover="ChangeImg('image/k4_1.png','outimage4')">
+                    <img src="image/k4_2.png" class="innerimage" onclick="ChangeImg('image/k4_2.png','outimage4')"
+                      onmouseover="ChangeImg('image/k4_2.png','outimage4')">
+                  </div>
+                  <br>
+                  <p class="card-text">Nike Team Hustle D 11<br> Baby/Toddler Shoes<br> 2 Colours</p>
+                  <h6 class="card-subtitle mb-2 text-muted">MRP: ₹ 5,095.00</h6>
+                </div>
+              </div>
+            </div>
+            <!-- Shoes 5 -->
+            <div class="col-md-4 div1" id="div5" onmouseover="changetext('text5',0)" onmouseout="changetext('text5',1)">
+              <div class="card">
+                <img src="image/k5_1.png" id="outimage5" class="card-img-top outimage" alt="Product Image">
+                <div class="card-body">
+                  <h5 class="card-title" style="color: rgb(220, 85, 2);">Bestseller</h5>
+                  <div id="text5" class="content">
+                    <img src="image/k5_1.png" class="innerimage" onclick="ChangeImg('image/k5_1.png','outimage5')"
+                      onmouseover="ChangeImg('image/k5_1.png','outimage5')">
+                    <img src="image/k5_2.png" class="innerimage" onclick="ChangeImg('image/k5_2.png','outimage5')"
+                      onmouseover="ChangeImg('image/k5_2.png','outimage5')">
+                    <img src="image/k5_3.png" class="innerimage" onclick="ChangeImg('image/k5_3.png','outimage5')"
+                      onmouseover="ChangeImg('image/k5_3.png','outimage5')">
+                  </div>
+                  <br>
+                  <p class="card-text">Nike MD Valiant<br> Baby/Toddler Shoes<br> 3 Colours</p>
+                  <h6 class="card-subtitle mb-2 text-muted">MRP: ₹ 2,847.00</h6>
+                </div>
+              </div>
+            </div>
+
+            <!-- Shoes 6 -->
+            <div class="col-md-4 div1" id="div6" onmouseover="changetext('text6',0)" onmouseout="changetext('text6',1)">
+              <div class="card">
+                <img src="image/k6_3.png" id="outimage6" class="card-img-top outimage" alt="Product Image">
+                <div class="card-body">
+                  <h5 class="card-title" style="color: rgb(220, 85, 2);">Just In</h5>
+                  <div id="text6" class="content">
+                    <img src="image/k6_1.png" class="innerimage" onclick="ChangeImg('image/k6_1.png','outimage6')"
+                      onmouseover="ChangeImg('image/k6_1.png','outimage6')">
+                    <img src="image/k6_2.png" class="innerimage" onclick="ChangeImg('image/k6_2.png','outimage6')"
+                      onmouseover="ChangeImg('image/k6_2.png','outimage6')">
+                    <img src="image/k6_3.png" class="innerimage" onclick="ChangeImg('image/k6_3.png','outimage6')"
+                      onmouseover="ChangeImg('image/k6_3.png','outimage6')">
+                    <img src="image/k6_4.png" class="innerimage" onclick="ChangeImg('image/k6_4.png','outimage6')"
+                      onmouseover="ChangeImg('image/k6_4.png','outimage6')">
+                  </div>
+                  <br>
+                  <p class="card-text">Nike Swoosh 1<br> Baby/Toddler Shoes<br> 4 Colours</p>
+                  <h6 class="card-subtitle mb-2 text-muted">MRP: ₹ 4,367.00</h6>
+                </div>
+              </div>
+            </div>
+
+            <!-- Shoes 7 -->
+            <div class="col-md-4 div1" id="div7" onmouseover="changetext('text7',0)" onmouseout="changetext('text7',1)">
+              <div class="card">
+                <img src="image/k7_1.png" id="outimage7" class="card-img-top outimage" alt="Product Image">
+                <div class="card-body">
+                  <h5 class="card-title" style="color: rgb(220, 85, 2);">Sustainable Materials</h5>
+                  <div id="text7" class="content">
+                    <img src="image/k7_1.png" class="innerimage" onclick="ChangeImg('image/k7_1.png','outimage7')"
+                      onmouseover="ChangeImg('image/k7_1.png','outimage7')">
+                    <img src="image/k7_2.png" class="innerimage" onclick="ChangeImg('image/k7_2.png','outimage7')"
+                      onmouseover="ChangeImg('image/k7_2.png','outimage7')">
+                    <img src="image/k7_3.png" class="innerimage" onclick="ChangeImg('image/k7_3.png','outimage7')"
+                      onmouseover="ChangeImg('image/k7_3.png','outimage7')">
+                    <img src="image/k7_4.png" class="innerimage" onclick="ChangeImg('image/k7_4.png','outimage7')"
+                      onmouseover="ChangeImg('image/k7_4.png','outimage7')">
+                  </div>
+                  <br>
+                  <p class="card-text">Nike Revolution 7<br> Baby/Toddler Shoes<br> 4 Colours</p>
+                  <h6 class="card-subtitle mb-2 text-muted">MRP: ₹ 3,095.00</h6>
+                </div>
+              </div>
+            </div>
+
+            <!-- Shoes 8 -->
+            <div class="col-md-4 div1" id="div8" onmouseover="changetext('text8',0)" onmouseout="changetext('text8',1)">
+              <div class="card">
+                <img src="image/k8_1.png" id="outimage8" class="card-img-top outimage" alt="Product Image">
+                <div class="card-body">
+                  <h5 class="card-title" style="color: rgb(220, 85, 2);">Sustainable Materials</h5>
+                  <div id="text8" class="content">
+                    <img src="image/k8_1.png" class="innerimage" onclick="ChangeImg('image/k8_1.png','outimage8')"
+                      onmouseover="ChangeImg('image/k8_1.png','outimage8')">
+                    <img src="image/k8_2.png" class="innerimage" onclick="ChangeImg('image/k8_2.png','outimage8')"
+                      onmouseover="ChangeImg('image/k8_2.png','outimage8')">
+                    <img src="image/k8_3.png" class="innerimage" onclick="ChangeImg('image/k8_3.png','outimage8')"
+                      onmouseover="ChangeImg('image/k8_3.png','outimage8')">
+                    <img src="image/k8_4.png" class="innerimage" onclick="ChangeImg('image/k8_4.png','outimage8')"
+                      onmouseover="ChangeImg('image/k8_4.png','outimage8')">
+                  </div>
+                  <br>
+                  <p class="card-text">Nike Flex Plus 22<br> Younger Kids' Shoes<br> 4 Colours</p>
+                  <h6 class="card-subtitle mb-2 text-muted">MRP: ₹ 4,267.00</h6>
+                </div>
+              </div>
+            </div>
+
+            <!-- Shoes 9 -->
+            <div class="col-md-4 div1" id="div9" onmouseover="changetext('text9',0)" onmouseout="changetext('text9',1)">
+              <div class="card">
+                <img src="image/k9_1.png" id="outimage9" class="card-img-top outimage" alt="Product Image">
+                <div class="card-body">
+                  <h5 class="card-title" style="color: rgb(220, 85, 2);">Bestseller</h5>
+                  <div id="text9" class="content">
+                    <img src="image/k9_1.png" class="innerimage" onclick="ChangeImg('image/k9_1.png','outimage9')"
+                      onmouseover="ChangeImg('image/k9_1.png','outimage9')">
+                    <img src="image/k9_2.png" class="innerimage" onclick="ChangeImg('image/k9_2.png','outimage9')"
+                      onmouseover="ChangeImg('image/k9_2.png','outimage9')">
+                    <img src="image/k9_3.png" class="innerimage" onclick="ChangeImg('image/k9_3.png','outimage9')"
+                      onmouseover="ChangeImg('image/k9_3.png','outimage9')">
+                    <img src="image/k9_4.png" class="innerimage" onclick="ChangeImg('image/k9_4.png','outimage9')"
+                      onmouseover="ChangeImg('image/k9_4.png','outimage9')">
+                  </div>
+                  <br>
+                  <p class="card-text">Nike SB Check Canvas<br> Younger Kids' Skate Shoes<br> 4 Colours</p>
+                  <h6 class="card-subtitle mb-2 text-muted">MRP: ₹ 3,495.00</h6>
+                </div>
+              </div>
+            </div>
+
+            <!-- Shoes 10 -->
+            <div class="col-md-4 div1" id="div10" onmouseover="changetext('text10',0)"
+              onmouseout="changetext('text10',1)">
+              <div class="card">
+                <img src="image/k10_1.png" id="outimage10" class="card-img-top outimage" alt="Product Image">
+                <div class="card-body">
+                  <h5 class="card-title" style="color: rgb(220, 85, 2);">Just In</h5>
+                  <div id="text10" class="content">
+                    <img src="image/k10_1.png" class="innerimage" onclick="ChangeImg('image/k10_1.png','outimage10')"
+                      onmouseover="ChangeImg('image/k10_1.png','outimage10')">
+                    <img src="image/k10_2.png" class="innerimage" onclick="ChangeImg('image/k10_2.png','outimage10')"
+                      onmouseover="ChangeImg('image/k10_2.png','outimage10')">
+                    <img src="image/k10_3.png" class="innerimage" onclick="ChangeImg('image/k10_3.png','outimage10')"
+                      onmouseover="ChangeImg('image/k10_3.png','outimage10')">
+                    <img src="image/k10_4.png" class="innerimage" onclick="ChangeImg('image/k10_4.png','outimage10')"
+                      onmouseover="ChangeImg('image/k10_4.png','outimage10')">
+                  </div>
+                  <br>
+                  <p class="card-text">Nike Air Zoom Arcadia 2<br> Younger Kids' Shoes<br> 4 Colours</p>
+                  <h6 class="card-subtitle mb-2 text-muted">MRP: ₹ 5,217.00</h6>
+                </div>
+              </div>
+            </div>
+
+            <!-- Shoes 11 -->
+            <div class="col-md-4 div1" id="div11" onmouseover="changetext('text11',0)"
+              onmouseout="changetext('text11',1)">
+              <div class="card">
+                <img src="image/k11_1.png" id="outimage11" class="card-img-top outimage" alt="Product Image">
+                <div class="card-body">
+                  <h5 class="card-title" style="color: rgb(220, 85, 2);">Bestseller</h5>
+                  <div id="text11" class="content">
+                    <img src="image/k11_1.png" class="innerimage" onclick="ChangeImg('image/k11_1.png','outimage11')"
+                      onmouseover="ChangeImg('image/k11_1.png','outimage11')">
+                    <img src="image/k11_2.png" class="innerimage" onclick="ChangeImg('image/k11_2.png','outimage11')"
+                      onmouseover="ChangeImg('image/k11_2.png','outimage11')">
+                    <img src="image/k11_3.png" class="innerimage" onclick="ChangeImg('image/k11_3.png','outimage11')"
+                      onmouseover="ChangeImg('image/k11_3.png','outimage11')">
+                    <img src="image/k11_4.png" class="innerimage" onclick="ChangeImg('image/k11_4.png','outimage11')"
+                      onmouseover="ChangeImg('image/k11_4.png','outimage11')">
+                  </div>
+                  <br>
+                  <p class="card-text">Nike Flex Runner 2<br> Younger Kids' Shoes<br> 4 Colours</p>
+                  <h6 class="card-subtitle mb-2 text-muted">MRP: ₹ 2,995.00</h6>
+                </div>
+              </div>
+            </div>
+
+            <!-- Shoes 12 -->
+            <div class="col-md-4 div1" id="div12" onmouseover="changetext('text12',0)"
+              onmouseout="changetext('text12',1)">
+              <div class="card">
+                <img src="image/k12_1.png" id="outimage12" class="card-img-top outimage" alt="Product Image">
+                <div class="card-body">
+                  <h5 class="card-title" style="color: rgb(220, 85, 2);">Just In</h5>
+                  <div id="text12" class="content">
+                    <img src="image/k12_1.png" class="innerimage" onclick="ChangeImg('image/k12_1.png','outimage12')"
+                      onmouseover="ChangeImg('image/k12_1.png','outimage12')">
+                    <img src="image/k12_2.png" class="innerimage" onclick="ChangeImg('image/k12_2.png','outimage12')"
+                      onmouseover="ChangeImg('image/k12_2.png','outimage12')">
+                    <img src="image/k12_3.png" class="innerimage" onclick="ChangeImg('image/k12_3.png','outimage12')"
+                      onmouseover="ChangeImg('image/k12_3.png','outimage12')">
+                  </div>
+                  <br>
+                  <p class="card-text">Nike Force 1 Low EasyOn<br> Younger Kids' Shoes<br> 3 Colours</p>
+                  <h6 class="card-subtitle mb-2 text-muted">MRP: ₹ 5,995.00</h6>
+                </div>
+              </div>
+            </div>
+
+            <!-- Shoes 13 -->
+            <div class="col-md-4 div1" id="div13" onmouseover="changetext('text13',0)"
+              onmouseout="changetext('text13',1)">
+              <div class="card">
+                <img src="image/k13_1.png" id="outimage13" class="card-img-top outimage" alt="Product Image">
+                <div class="card-body">
+                  <h5 class="card-title" style="color: rgb(220, 85, 2);">Just In</h5>
+                  <div id="text13" class="content">
+                    <img src="image/k13_1.png" class="innerimage" onclick="ChangeImg('image/k13_1.png','outimage13')"
+                      onmouseover="ChangeImg('image/k13_1.png','outimage13')">
+                    <img src="image/k13_2.png" class="innerimage" onclick="ChangeImg('image/k13_2.png','outimage13')"
+                      onmouseover="ChangeImg('image/k13_2.png','outimage13')">
+                    <img src="image/k13_3.png" class="innerimage" onclick="ChangeImg('image/k13_3.png','outimage13')"
+                      onmouseover="ChangeImg('image/k13_3.png','outimage13')">
+                  </div>
+                  <br>
+                  <p class="card-text">Nike Sunray Adjust 6<br> Younger Kids' Slides<br> 3 Colours</p>
+                  <h6 class="card-subtitle mb-2 text-muted">MRP: ₹ 2,995.00</h6>
+                </div>
+              </div>
+            </div>
+
+            <!-- Shoes 14 -->
+            <div class="col-md-4 div1" id="div14" onmouseover="changetext('text14',0)"
+              onmouseout="changetext('text14',1)">
+              <div class="card">
+                <img src="image/k14_1.png" id="outimage14" class="card-img-top outimage" alt="Product Image">
+                <div class="card-body">
+                  <h5 class="card-title" style="color: rgb(220, 85, 2);">Sustainable Materials</h5>
+                  <div id="text14" class="content">
+                    <img src="image/k14_1.png" class="innerimage" onclick="ChangeImg('image/k14_1.png','outimage14')"
+                      onmouseover="ChangeImg('image/k14_1.png','outimage14')">
+                    <img src="image/k14_2.png" class="innerimage" onclick="ChangeImg('image/k14_2.png','outimage14')"
+                      onmouseover="ChangeImg('image/k14_2.png','outimage14')">
+                  </div>
+                  <br>
+                  <p class="card-text">Nike Jr. Mercurial Vapor 15 Academy<br> Younger/Older Kids' Multi-Ground Low-Top
+                    Football Boot<br> 2 Colours</p>
+                  <h6 class="card-subtitle mb-2 text-muted">MRP: ₹ 5,697.00</h6>
+                </div>
+              </div>
+            </div>
+
+            <!-- Shoes 15 -->
+            <div class="col-md-4 div1">
+              <div class="card">
+                <img src="image/k15_1.png" id="outimage15" class="card-img-top outimage" alt="Product Image">
+                <div class="card-body">
+                  <h5 class="card-title" style="color: rgb(220, 85, 2);">Bestseller</h5>
+                  <br>
+                  <p class="card-text">Nike Air Max 270 GO<br> Younger Kids' Easy On/Off Shoes<br> 1 Colours</p>
+                  <h6 class="card-subtitle mb-2 text-muted">MRP: ₹ 7,597.00</h6>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+  </div>
+  <!-- footer starts -->
+  <div class="flex-end container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+    <div class="container py-5">
+      <div class="row g-5">
+        <div class="col-lg-3 col-md-6">
+          <h4 class="text-white mb-3">Company</h4>
+          <a class="btn btn-link" href="">About Us</a>
+          <a class="btn btn-link" href="">Contact Us</a>
+          <a class="btn btn-link" href="">Privacy Policy</a>
+          <a class="btn btn-link" href="">Terms & Condition</a>
+          <a class="btn btn-link" href="">FAQs & Help</a>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <h4 class="text-white mb-3">Contact</h4>
+          <p class="mb-2">
+            <i class="fa fa-map-marker-alt me-3"></i>123 Street, Ahmeadabad,INDIA
+          </p>
+          <p class="mb-2">
+            <i class="fa fa-phone-alt me-3"></i>+012 345 67890
+          </p>
+          <p class="mb-2">
+            <i class="fa fa-envelope me-3"></i>stepupshoes@gmail.com
+          </p>
+          <div class="d-flex pt-2">
+            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
+            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
+            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
+            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <h4 class="text-white mb-3">Gallery</h4>
+          <div class="row g-2 pt-2">
+            <div class="col-4">
+              <img class="img-fluid bg-light p-1" src="image/f1.png" alt="" />
+            </div>
+            <div class="col-4">
+              <img class="img-fluid bg-light p-1" src="image/f2.png" alt="" />
+            </div>
+            <div class="col-4">
+              <img class="img-fluid bg-light p-1" src="image/f3.png" alt="" />
+            </div>
+            <div class="col-4">
+              <img class="img-fluid bg-light p-1" src="image/f4.jpeg" alt="" />
+            </div>
+            <div class="col-4">
+              <img class="img-fluid bg-light p-1" src="image/f5.jpeg" />
+            </div>
+            <div class="col-4">
+              <img class="img-fluid bg-light p-1" src="image/f6.jpeg" alt="" />
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <h4 class="text-white mb-3">Newsletter</h4>
+          <p>Dolor amet sit justo amet elitr clita ipsum elitr est.</p>
+          <div class="position-relative mx-auto" style="max-width: 400px">
+            <input class="form-control border-primary w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email" />
+            <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">
+              SignUp
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="copyright">
+        <div class="row">
+          <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+            &copy; <a class="border-bottom" href="#">www.stepupshoes.com</a>, All
+            Right Reserved. Designed By
+            <a class="border-bottom" href="#">Coding Home</a>
+          </div>
+          <div class="col-md-6 text-center text-md-end">
+            <div class="footer-menu">
+              <a href="">Home</a>
+              <a href="">Cookies</a>
+              <a href="">Help</a>
+              <a href="">FQAs</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Footer End -->
+</body>
+
+</html>
